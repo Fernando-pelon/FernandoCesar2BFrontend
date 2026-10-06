@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <div class="container">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container mt-4">
+      <div id="alertContainer"></div>
+
+      <!-- Formulario -->
+      <h2>Eventos</h2>
+      <form id="formEvento">
+        <input type="hidden" id="id_evento" />
+
+        <div class="mb-3">
+          <label for="cliente_evento" class="form-label">Cliente:</label>
+          <select class="form-select" id="cliente_evento">
+            <option value="">Seleccione un cliente</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="salon_evento" class="form-label">Salón:</label>
+          <select class="form-select" id="salon_evento">
+            <option value="">Seleccione un salón</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="txtnombre_evento" class="form-label">Nombre del evento:</label>
+          <input type="text" class="form-control" id="txtnombre_evento" />
+        </div>
+
+        <div class="mb-3">
+          <label for="txtfecha_evento" class="form-label">Fecha del evento:</label>
+          <input type="date" class="form-control" id="txtfecha_evento" />
+        </div>
+
+        <div class="mb-3">
+          <label for="txtcantidad_personas" class="form-label">Cantidad de personas:</label>
+          <input type="number" class="form-control" id="txtcantidad_personas" />
+        </div>
+
+        <div class="mb-3">
+          <label for="txtcantidad_horas" class="form-label">Cantidad de horas:</label>
+          <input type="number" class="form-control" id="txtcantidad_horas" />
+        </div>
+
+        <div class="mb-3 d-none" id="grupo_estado">
+          <label for="estado_evento" class="form-label">Estado:</label>
+          <select class="form-select" id="estado_evento">
+            <option value="PENDIENTE">PENDIENTE</option>
+            <option value="CONFIRMADO">CONFIRMADO</option>
+            <option value="CANCELADO">CANCELADO</option>
+            <option value="FINALIZADO">FINALIZADO</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+        <button type="button" class="btn btn-secondary d-none" id="btnCancelar">Cancelar</button>
+      </form>
+
+      <!-- Tabla -->
+      <h2 class="mt-5">Lista de eventos</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Salón</th>
+            <th>Evento</th>
+            <th>Fecha</th>
+            <th>Personas</th>
+            <th>Horas</th>
+            <th>Total a pagar</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaEventos"></tbody>
+      </table>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="js/controllers/indexController.js"></script>
+  </body>
+</html>

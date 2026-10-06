@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clientes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <div class="container">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container mt-4">
+      <div id="alertContainer"></div>
+
+      <!-- Formulario -->
+      <h2>Clientes</h2>
+      <form id="formCliente">
+        <input type="hidden" id="id_cliente" />
+
+        <div class="mb-3">
+          <label for="txtnombre_cliente" class="form-label">Nombre del cliente:</label>
+          <input type="text" class="form-control" id="txtnombre_cliente" />
+        </div>
+
+        <div class="mb-3">
+          <label for="txtapellido_cliente" class="form-label">Apellido del cliente:</label>
+          <input type="text" class="form-control" id="txtapellido_cliente" />
+        </div>
+
+        <div class="mb-3">
+          <label for="txttelefono_cliente" class="form-label">Teléfono:</label>
+          <input type="tel" class="form-control" id="txttelefono_cliente" />
+        </div>
+
+        <div class="mb-3">
+          <label for="txtemail_cliente" class="form-label">Correo:</label>
+          <input type="email" class="form-control" id="txtemail_cliente" />
+        </div>
+
+        <div class="mb-3">
+          <label for="txtdireccion_cliente" class="form-label">Dirección:</label>
+          <input type="text" class="form-control" id="txtdireccion_cliente" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+        <button type="button" class="btn btn-secondary d-none" id="btnCancelar">Cancelar</button>
+      </form>
+
+      <!-- Tabla -->
+      <h2 class="mt-5">Lista de clientes</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaClientes"></tbody>
+      </table>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="js/controllers/clientesController.js"></script>
+  </body>
+</html>
